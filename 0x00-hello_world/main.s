@@ -1,5 +1,4 @@
 	.file	"main.c"
-	.intel_syntax noprefix
 	.text
 	.def	___main;	.scl	2;	.type	32;	.endef
 	.globl	_main
@@ -7,14 +6,14 @@
 _main:
 LFB13:
 	.cfi_startproc
-	push	ebp
+	pushl	%ebp
 	.cfi_def_cfa_offset 8
 	.cfi_offset 5, -8
-	mov	ebp, esp
+	movl	%esp, %ebp
 	.cfi_def_cfa_register 5
-	and	esp, -16
+	andl	$-16, %esp
 	call	___main
-	mov	eax, 0
+	movl	$0, %eax
 	leave
 	.cfi_restore 5
 	.cfi_def_cfa 4, 4
